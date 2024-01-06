@@ -194,7 +194,7 @@ for (dayn in trade_day_index_seq) {
 		## the "-1" here is to include data from the past, and to exclude data from
 		## the tradeday date.
 		## 
-		##           |---- trade day
+        ##           |---- trade day
         ##           +
 		## 1 2 3 4 5 6
 		## |-------|
