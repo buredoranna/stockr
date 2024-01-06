@@ -1,0 +1,13 @@
+aapl_col <- "black"
+amd_col  <- "green"
+amzn_col <- "green"
+csco_col <- "darkgreen"
+ebay_col <- "red"
+goog_col <- "red"
+ibm_col  <- "blue"
+intc_col <- "violetred"
+msft_col <- "limegreen"
+nflx_col <- "violet"
+orcl_col <- "magenta"
+yhoo_col <- "yellow"
+
