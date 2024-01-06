@@ -420,7 +420,7 @@ for (dayn in trade_day_index_seq) {
 		## the tradeday date.
 		## 
 		##           +---- trade day
-        ##           |
+		##           |
 		## 1 2 3 4 5 6
 		## |-------|
 		##         +--- indexes to use in analises
