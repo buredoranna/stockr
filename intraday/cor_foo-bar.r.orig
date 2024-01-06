@@ -1,0 +1,32 @@
+## read data 
+port <- read.table("/home/user/data/stocks/intraday/20140128.csv", sep=",", header=T)
+
+foo_bar_cor <- cor(port$foo, port$bar)
+
+diff_foo <- ceiling(diff(range(port$foo)))
+diff_bar <- ceiling(diff(range(port$bar)))
+
+if (diff_foo > diff_bar) {
+	y_range_delta <- diff_foo
+} else {
+	y_range_delta <- diff_bar
+}	
+
+l <- lm(port$foo~c(seq(1:length(port$foo))))
+
+plot(port$foo, main="foo (r) : bar (b)", col="red",
+     ylim=c(min(port$foo), min(port$foo) + y_range_delta), axes=F, ylab="", xlab="")
+par(new=T)
+abline(l, col="red"); par(new=T)
+axis(2, labels=FALSE); par(new=T)
+
+l <- lm(port$bar~c(seq(1:length(port$bar))))
+plot(port$bar, col="blue", ylim=c(min(port$bar), min(port$bar) + y_range_delta),
+     axes=F, ylab="", xlab=c(paste(round(foo_bar_cor*100, 2), "% correlation")))
+par(new=T)
+
+abline(l, col="blue")
+par(new=T)
+axis(1)
+par(new=T)
+
